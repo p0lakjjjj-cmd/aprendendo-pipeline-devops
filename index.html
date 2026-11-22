@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -95,7 +96,7 @@
             background-color: #c0392b;
             grid-column: span 2;
         }
-        
+
         button.equal {
             background-color: #27ae60;
             grid-column: span 2;
@@ -114,26 +115,26 @@
         </select>
     </div>
 
-    <!-- H1 principal que usaremos como âncora no teste do Playwright -->
     <h1 id="titulo-pagina" style="display: none;">Calculadora Pronta</h1>
 
     <div class="calculator">
         <input type="text" id="display" readonly placeholder="0">
+
         <div class="buttons">
             <button class="clear" onclick="limpar()">C</button>
             <button class="operator" onclick="adicionar('/')">/</button>
             <button class="operator" onclick="adicionar('*')">×</button>
-            
+
             <button onclick="adicionar('7')">7</button>
             <button onclick="adicionar('8')">8</button>
             <button onclick="adicionar('9')">9</button>
             <button class="operator" onclick="adicionar('-')">-</button>
-            
+
             <button onclick="adicionar('4')">4</button>
             <button onclick="adicionar('5')">5</button>
             <button onclick="adicionar('6')">6</button>
-            <button class="operator" onclick="adicionar('+')">+</button>
-            
+            <button class="operator" onclick="adicionar('X')">X</button>
+
             <button onclick="adicionar('1')">1</button>
             <button onclick="adicionar('2')">2</button>
             <button onclick="adicionar('3')">3</button>
@@ -155,8 +156,7 @@
 
         function calcular() {
             try {
-                // Avalia a expressão matemática de forma simples para a demo
-                if(display.value) {
+                if (display.value) {
                     display.value = eval(display.value);
                 }
             } catch (error) {
@@ -166,7 +166,7 @@
 
         function mudarCor() {
             const tema = document.getElementById('theme-select').value;
-            
+
             if (tema === 'padrao') {
                 root.style.setProperty('--bg-color', '#2c3e50');
                 root.style.setProperty('--calc-bg', '#34495e');
